@@ -125,6 +125,7 @@ $(document).ready(function () {
             noAnswer++;
             setTimeout(function () {
                 alert("Sorry. Time is up!");
+                delete notAnsweredArr[0];
                 generateQuestion();
                 clock = 10;
                 timerStart();
