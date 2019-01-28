@@ -1,6 +1,5 @@
 body {
     background: url('../images/background.png')
-
 }
 
 #pic {
@@ -34,7 +33,6 @@ body {
     margin-left: 10%;
 }
 
-
 #startBtn {
     background: rgb(248,173,132);
     width: 900px;
@@ -65,7 +63,6 @@ body {
 }
 
 .buttons {
-    float: left;
     background: rgb(109,185,217);
     font-family: 'Geo', sans-serif;
     border-style: none;
@@ -78,8 +75,10 @@ body {
 }
 
 #reset {
-    height: 50px;
-    width: 80px;
+    position: relative;
+    width: 200px;
+    left: 350px;
+    top: 50px;
     background: rgb(109,185,217);
     font-family: 'Geo', sans-serif;
     font-size: 1.5rem;

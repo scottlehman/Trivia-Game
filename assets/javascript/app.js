@@ -14,7 +14,6 @@ $(document).ready(function () {
             question: "What is Rocko's favorite Restaurant",
             choices: ["Slippery Pete's", "Chokey's Chicken", "Jumpin' John's", "Big Bill's"],
             answer: 1,
-
         },
         {
             question: "Rocko's neighbor, Ed Bighead says this very often",
@@ -39,20 +38,19 @@ $(document).ready(function () {
     wrongAnswer = 0;
     noAnswer = 0;
     totalAnswers = 5;
-    var notAnsweredArr = [];
+    notAnsweredArr = [];
 
     generateQuestion = function () {
+        
         questionIndex = notAnsweredArr[0];
-        // randomPick = questions[questionIndex];
         answersPick = notAnsweredArr[0].choices;
         correctAnswer = notAnsweredArr[0].answer;
 
-        $("#question").html("<h1>" + questionIndex.question + "</h1>");
+        $("#question").html(`<h1>${questionIndex.question}</h1>`);
         $("#answer1").html(`<h4>${answersPick[0]}</h4>`);
         $("#answer2").html(`<h4>${answersPick[1]}</h4>`);
         $("#answer3").html(`<h4>${answersPick[2]}</h4>`);
         $("#answer4").html(`<h4>${answersPick[3]}</h4>`);
-
     }
 
     $(".buttons").on("click", function (event) {
@@ -79,29 +77,26 @@ $(document).ready(function () {
             stopClock();
             $("#questionAnswer").empty();
             $("#questionAnswer").html("<h1>All questions have been answered!  Here's how you did: </h1>");
-            $("#questionAnswer").append("<h2> Correct: " + rightAnswer + "</h2>");
-            $("#questionAnswer").append("<h2> Incorrect: " + wrongAnswer + "</h2>");
-            $("#questionAnswer").append("<h2> Unanswered: " + noAnswer + "</h2>");
-            $("#reset").show();
-
+            $("#questionAnswer").append(`<h2> Correct: ${rightAnswer}</h2>`);
+            $("#questionAnswer").append(`<h2> Incorrect: ${wrongAnswer}</h2>`);
+            $("#questionAnswer").append(`<h2> Unanswered: ${noAnswer}</h2>`);
+            $("#resetDiv").html('<button id="reset">Reset</button>');
         }
 
     });
 
     $('#startBtn').on("click", function () {
         $("#startBtn").hide();
-        $("#reset").hide();
 
         for (i = 0; i < questions.length; i++) {
             notAnsweredArr.push(questions[i]);
         }
         generateQuestion();
         timerStart();
-
-    });
+    })
 
     $('#reset').on("click", function () {
-       alert("hello");
+        location.reload();
     })
 
     function timerStart() {
@@ -130,9 +125,7 @@ $(document).ready(function () {
 
     function stopClock() {
         running = false;
-        $("#timer").empty();
-        $("#timer").html(`<button id="reset">Reset</button>`);
-        clearInterval(intervalId);
+        $("#timer").empty();   
+        clearInterval(intervalId);      
     }
-
 })
