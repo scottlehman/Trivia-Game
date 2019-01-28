@@ -53,10 +53,6 @@ $(document).ready(function () {
         $("#answer3").html(`<h4>${answersPick[2]}</h4>`);
         $("#answer4").html(`<h4>${answersPick[3]}</h4>`);
 
-        console.log(questionIndex);
-        // console.log(randomPick);
-        console.log(answersPick);
-        console.log(correctAnswer);
     }
 
     $(".buttons").on("click", function (event) {
@@ -82,7 +78,7 @@ $(document).ready(function () {
 
             stopClock();
             $("#questionAnswer").empty();
-            $("#questionAnswer").html("<h1>Game Over!  Here's how you did: </h1>");
+            $("#questionAnswer").html("<h1>All questions have been answered!  Here's how you did: </h1>");
             $("#questionAnswer").append("<h2> Correct: " + rightAnswer + "</h2>");
             $("#questionAnswer").append("<h2> Incorrect: " + wrongAnswer + "</h2>");
             $("#questionAnswer").append("<h2> Unanswered: " + noAnswer + "</h2>");
@@ -101,14 +97,12 @@ $(document).ready(function () {
         }
         generateQuestion();
         timerStart();
-        // console.log(questions);
-        // console.log(notAnsweredArr);
 
     });
 
     $('#reset').on("click", function () {
-       location.reload();
-    });
+       alert("hello");
+    })
 
     function timerStart() {
         if (!clockRunning) {
@@ -125,7 +119,8 @@ $(document).ready(function () {
             noAnswer++;
             setTimeout(function () {
                 alert("Sorry. Time is up!");
-                delete notAnsweredArr[0];
+                notAnsweredArr.shift();
+                noAnswer++;
                 generateQuestion();
                 clock = 10;
                 timerStart();
