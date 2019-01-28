@@ -1,0 +1,104 @@
+body {
+    background: url('../images/background.png')
+
+}
+
+#pic {
+    height: 549px;
+    z-index: 1;
+}
+
+#header {
+    float: left;
+    width: 758px;
+    margin-right: 0;
+    margin-left: 4%;
+}
+
+#triviaWord {
+    position: relative;
+    color: red;
+    font-family: 'Schoolbell', cursive;
+    font-size: 8rem;
+    font-weight: bolder;
+    transform: rotate(-20deg);
+    z-index: 3;
+    width: 300px;
+    top: -180px;
+    left: 200px;
+}
+
+#questionAnswer {
+    font-family: 'Geo', sans-serif;
+    margin-top: 40%;
+    margin-left: 10%;
+}
+
+
+#startBtn {
+    background: rgb(248,173,132);
+    width: 900px;
+    height: 800px;
+    border: solid;
+    border-radius: 60% 30% 20% 20%;
+    margin: 0;
+    z-index: 5;
+    font-family: 'Geo', sans-serif;
+    font-size: 9rem;
+
+}
+
+#timer {
+    position: relative;
+    width: 200px;
+    left: 350px;
+    top: 50px;
+}
+
+#question {
+    font-size: 2rem;
+}
+
+#answers {
+    top: 100px;
+    margin-left: 5%; 
+}
+
+.buttons {
+    float: left;
+    background: rgb(109,185,217);
+    font-family: 'Geo', sans-serif;
+    border-style: none;
+    font-size: 1.5rem;
+    margin-right: 2%;
+    border-radius: 40% 20% 50% 30%;
+    border-style: solid;
+    border-color: black;
+
+}
+
+#reset {
+    height: 50px;
+    width: 80px;
+    background: rgb(109,185,217);
+    font-family: 'Geo', sans-serif;
+    font-size: 1.5rem;
+    margin-right: 2%;
+    border-radius: 40% 20% 50% 30%;
+    border-style: solid;
+    border-color: black;
+}
+
+#quizBlock {
+    float: left;
+    background: rgb(248,173,132);
+    width: 900px;
+    height: 800px;
+    border: solid;
+    font-family: 'Geo', sans-serif;
+    font-size: 1rem;
+    border-radius: 60% 30% 20% 20%;
+    margin-left: 5%;
+    margin-top: 2%;
+    padding: 0;
+}
