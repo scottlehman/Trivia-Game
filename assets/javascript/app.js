@@ -59,21 +59,18 @@ $(document).ready(function () {
 
         if (event === correctAnswer) {
             rightAnswer++;
-            console.log(rightAnswer);
             notAnsweredArr.shift();
             generateQuestion();
             clock = 10;
 
         } else if (event != correctAnswer) {
             wrongAnswer++;
-            console.log(wrongAnswer);
             notAnsweredArr.shift();
             generateQuestion();
             clock = 10;
         }
 
         if (wrongAnswer + rightAnswer + noAnswer === totalAnswers) {
-
             stopClock();
             $("#questionAnswer").empty();
             $("#questionAnswer").html("<h1>All questions have been answered!  Here's how you did: </h1>");
@@ -82,6 +79,10 @@ $(document).ready(function () {
             $("#questionAnswer").append(`<h2> Unanswered: ${noAnswer}</h2>`);
             $("#resetDiv").html('<button id="reset">Reset</button>');
         }
+
+        $('#reset').on("click", function () {
+            location.reload();
+        })
 
     });
 
@@ -95,9 +96,7 @@ $(document).ready(function () {
         timerStart();
     })
 
-    $('#reset').on("click", function () {
-        location.reload();
-    })
+
 
     function timerStart() {
         if (!clockRunning) {
